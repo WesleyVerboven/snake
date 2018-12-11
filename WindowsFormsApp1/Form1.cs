@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class Canvas : Form
     {
         Snake head;
         List<Snake> Body = new List<Snake>();
         int Bodysize = 0;
         Timer update = new Timer();
-        public Form1()
+        public Canvas()
         {
             InitializeComponent();
             head = new Snake(Bodysize);

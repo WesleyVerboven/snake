@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class Canvas
     {
         /// <summary>
         /// Required designer variable.
@@ -38,14 +38,13 @@
             this.Update1.Interval = 1;
             this.Update1.Tick += new System.EventHandler(this.Update1_Tick);
             // 
-            // Form1
+            // Canvas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Name = "Form1";
-            this.Text = "Form1";
-           
+            this.Name = "Canvas";
+            this.Text = "Snake";
             this.Click += new System.EventHandler(this.Form1_Click);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
