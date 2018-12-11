@@ -33,25 +33,25 @@ namespace WindowsFormsApp1
             for (int i = 0; i < Body.Count; i++)
             {
                 Body[i].update();
-                if (head.turn != Body[i].turn && Body[i].CheckPosition())
+                if (Body[i].CheckPosition() && head.turn != Body[i].turn )
                 {
                     if (i == 0)
                     {
                         if (Body[i].turn != head.turn)
                         {
                             Body[i].turn = head.turn;
+                            Body[i].VChangespeed = head.VChangespeed;
+                            Body[i].HChangespeed = head.HChangespeed;
                         }
                     }
                     else if (Body[i].turn != Body[i - 1].turn)
                     {
                         Body[i].turn = Body[i - 1].turn;
+                        Body[i].VChangespeed = Body[i - 1].VChangespeed;
+                        Body[i].HChangespeed = Body[i - 1].HChangespeed;
                     }
                 }
-                if (Body[i].turn != null)
-                {
-
-                }
-
+             
             }
 
              

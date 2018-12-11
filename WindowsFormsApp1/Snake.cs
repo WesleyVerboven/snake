@@ -16,8 +16,8 @@ namespace WindowsFormsApp1
         int Hspeed = -1;
         int Vspeed = 0;
         public Point turn = new Point();
-        int HChangespeed = 0;
-        int VChangespeed = 0;
+        public int HChangespeed = 0;
+        public int VChangespeed = 0;
 
         public Snake(int groote)
         {
@@ -82,8 +82,20 @@ namespace WindowsFormsApp1
         }
         public bool CheckPosition()
         {
-            if (snakeLocation == turn)
+            if (turn == new Point(0, 0))
                 return true;
+            else if (snakeLocation.X > turn.X - 3 || snakeLocation.X < turn.X + 3)
+            {
+                if (snakeLocation.Y > turn.Y - 3 || snakeLocation.Y < turn.Y + 3)
+                {
+                    snakeLocation = turn;
+                    Vspeed = VChangespeed;
+                    Hspeed = HChangespeed;
+                    return true;
+                }
+                
+            }
+                
             return false;
         }
         public void changeSpeed(KeyEventArgs e)
@@ -93,21 +105,29 @@ namespace WindowsFormsApp1
                 case Keys.Up:
                     Vspeed = -1;
                     Hspeed = 0;
+                    VChangespeed = -1;
+                    HChangespeed = 0;
                     turn = snakeLocation;
                     break;
                 case Keys.Down:
                     Vspeed = 1;
                     Hspeed = 0;
+                    VChangespeed = 1;
+                    HChangespeed = 0;
                     turn = snakeLocation;
                     break;
                 case Keys.Right:
                     Vspeed = 0;
                     Hspeed = 1;
+                    VChangespeed = 0;
+                    HChangespeed = 1;
                     turn = snakeLocation;
                     break;
                 case Keys.Left:
                     Vspeed = 0;
                     Hspeed = -1;
+                    VChangespeed = 0;
+                    HChangespeed = -1;
                     turn = snakeLocation;
                     break;
             }
