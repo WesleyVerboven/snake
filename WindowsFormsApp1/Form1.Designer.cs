@@ -29,12 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.Update1 = new System.Windows.Forms.Timer(this.components);
+            this.SuspendLayout();
+            // 
+            // Update1
+            // 
+            this.Update1.Enabled = true;
+            this.Update1.Interval = 1;
+            this.Update1.Tick += new System.EventHandler(this.Update1_Tick);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Name = "Form1";
             this.Text = "Form1";
+           
+            this.Click += new System.EventHandler(this.Form1_Click);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+        private System.Windows.Forms.Timer Update1;
     }
 }
 
